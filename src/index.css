@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  @apply bg-gray-50;
+}
+
+.page-transition {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 transition-shadow duration-300 hover:shadow-lg;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-opacity-50;
+}
+
+.btn-primary {
+  @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+}
+
+.btn-secondary {
+  @apply bg-secondary-600 text-white hover:bg-secondary-700 focus:ring-secondary-500;
+}
+
+.btn-accent {
+  @apply bg-accent-600 text-white hover:bg-accent-700 focus:ring-accent-500;
+}
+
+.btn-outline {
+  @apply border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-300;
+}
+
+.input-field {
+  @apply w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+}
+
+/* CodeMirror customizations */
+.cm-editor {
+  @apply font-mono text-sm border border-gray-300 rounded-md overflow-hidden;
+  height: 100%;
+}
+
+.cm-scroller {
+  @apply overflow-auto;
+  height: 100% !important;
+}
+
+/* Make PDF viewer responsive */
+.pdf-viewer {
+  @apply w-full h-full overflow-auto bg-gray-100 rounded-md border border-gray-300;
+}
+
+/* Image gallery */
+.image-gallery {
+  @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
+}
+
+.image-item {
+  @apply relative overflow-hidden rounded-md cursor-pointer transition-all duration-200 hover:opacity-90;
+}
+
+.image-item.selected {
+  @apply ring-2 ring-primary-500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-in-out;
+}
